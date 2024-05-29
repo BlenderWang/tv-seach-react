@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
+import Header from "./components/Header";
 import ThemeSwitch from "./components/ThemeSwitch";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -21,7 +22,10 @@ export default function RootLayout({
         <html lang="en" suppressHydrationWarning>
             <body className={inter.className}>
                 <Providers>
-                    <ThemeSwitch />
+                    <div className="p-6 w-full flex justify-between items-center gap-4">
+                        <Header />
+                        <ThemeSwitch />
+                    </div>
                     {children}
                 </Providers>
             </body>

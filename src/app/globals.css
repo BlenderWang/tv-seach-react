@@ -11,20 +11,67 @@
 @media (prefers-color-scheme: dark) {
     :root {
         --foreground-rgb: 255, 255, 255;
-        --background-start-rgb: 0, 0, 0;
-        --background-end-rgb: 0, 0, 0;
+        --background-start-rgb: 255, 109, 109;
+        --background-end-rgb: 255, 109, 109;
     }
 }
 
-/* body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-} */
+@layer base {
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+        /* scrollbar-gutter: stable; */
+        scroll-behavior: smooth;
+    }
+    body {
+        @apply m-0 p-0 h-screen w-screen text-gray-800 bg-gradient-to-tl from-[rgba(2,0,36,0.6)_0%] via-[rgba(82,9,121,0.5)_25%] to-[rgba(168,38,237,0.3)_100%] dark:from-[rgba(2,0,36,1)_0%] dark:via-[rgba(9,9,121,1)_35%] dark:to-[rgba(0,212,255,1)_100%] dark:text-white;
+    }
+}
+
+@layer components {
+    .link {
+        @apply cursor-pointer hover:underline;
+    }
+
+    .content {
+        position: relative;
+        height: 37vw;
+        margin-top: -40px;
+    }
+
+    .content__background,
+    .content__background__shadow,
+    .content__background__image,
+    .content__area {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+    }
+
+    .content__background {
+        left: 0;
+        right: 0;
+    }
+
+    .content__background__shadow {
+        left: 0;
+        background: #000;
+        width: 30%;
+        z-index: 2;
+    }
+
+    .content__background__shadow::before {
+        content: "";
+        position: absolute;
+        z-index: 10;
+        background-image: linear-gradient(to right, #000, transparent);
+        top: 0;
+        bottom: 0;
+        left: 100%;
+        width: 275px;
+    }
+}
 
 @layer utilities {
     .text-balance {
