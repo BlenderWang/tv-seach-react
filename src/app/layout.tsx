@@ -24,6 +24,7 @@ export default function RootLayout({
                 <Providers>
                     <div className="p-6 w-full flex justify-between items-center gap-4">
                         <Header />
+
                         <ThemeSwitch />
                     </div>
                     {children}
