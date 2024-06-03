@@ -1,11 +1,8 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
 import Header from "./components/Header";
 import ThemeSwitch from "./components/ThemeSwitch";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
     title: "TV search app",
@@ -20,14 +17,16 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en" suppressHydrationWarning>
-            <body className={inter.className}>
+            <body className="">
                 <Providers>
-                    <div className="p-6 w-full flex justify-between items-center gap-4">
-                        <Header />
+                    <main className="max-w-6xl mx-auto">
+                        <div className="p-6 w-full flex justify-between items-center gap-4">
+                            <Header />
 
-                        <ThemeSwitch />
-                    </div>
-                    {children}
+                            <ThemeSwitch />
+                        </div>
+                        {children}
+                    </main>
                 </Providers>
             </body>
         </html>

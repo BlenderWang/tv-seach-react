@@ -1,15 +1,9 @@
-"use client";
-
-import Image from "next/image";
-import TopShows from "./components/TopShows";
+import Shows from "./components/Shows";
 
 export default function Home() {
     return (
         <main className="py-2">
-            <div>
-                page
-                <TopShows />
-            </div>
+            <Shows />
         </main>
     );
 }
