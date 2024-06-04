@@ -12,7 +12,8 @@ export default async function Shows() {
         return <h2 className="m-4 text-2xl font-bold">No Shows Found</h2>;
 
     // const showsWithBlur = await addBlurredDataUrls(shows);
-    // console.log(showsWithBlur);
+
+    console.log(shows);
 
     return (
         <section className="px-2 my-3 grid gap-2 grid-cols-gallery">

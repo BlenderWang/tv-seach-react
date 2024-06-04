@@ -20,10 +20,12 @@ const ShowSchema = z.object({
     blurredDataUrl: z.string().optional(),
 });
 
-export const SearchSchema = z.object({
-    score: z.number(),
-    show: ShowSchema,
-});
+export const SearchSchema = z
+    .object({
+        score: z.number(),
+        show: ShowSchema,
+    })
+    .array();
 
 export const ShowsSchemaWithLinks = z.array(ShowSchema);
 

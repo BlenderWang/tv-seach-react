@@ -37,7 +37,7 @@ const Searchbar = () => {
                 className="bg-white p-2 w-[260px] sm:w-80 text-xl rounded text-black"
                 value={query}
                 onChange={handleChange}
-                placeholder="i.e. Dorahodora"
+                placeholder="i.e. South Park"
             />
             {/* <button className="button" type="submit">
                 <i className="fas fa-search"></i>

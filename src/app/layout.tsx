@@ -3,6 +3,8 @@ import "./globals.css";
 import { Providers } from "./providers";
 import Header from "./components/Header";
 
+export const revalidate = 3600;
+
 export const metadata: Metadata = {
     title: "TV search app",
     description:
