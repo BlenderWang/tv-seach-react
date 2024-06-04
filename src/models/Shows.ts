@@ -1,13 +1,5 @@
 import { z } from "zod";
 
-// const BasicImageSchema = z.object({
-//     page: z.number(),
-//     per_page: z.number().optional(),
-//     prev_page: z.string().optional(),
-//     next_page: z.string().optional(),
-//     total_results: z.number().optional(),
-// });
-
 const ShowSchema = z.object({
     id: z.number(),
     url: z.string(),
@@ -28,8 +20,15 @@ const ShowSchema = z.object({
     blurredDataUrl: z.string().optional(),
 });
 
+export const SearchSchema = z.object({
+    score: z.number(),
+    show: ShowSchema,
+});
+
 export const ShowsSchemaWithLinks = z.array(ShowSchema);
 
 export type Show = z.infer<typeof ShowSchema>;
 
 export type ShowsResults = z.infer<typeof ShowsSchemaWithLinks>;
+
+export type SearchResults = z.infer<typeof SearchSchema>;

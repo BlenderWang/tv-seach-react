@@ -17,9 +17,14 @@ export default async function Shows() {
     return (
         <section className="px-2 my-3 grid gap-2 grid-cols-gallery">
             {/* <h2 className="m-4 text-2xl font-bold">Shows</h2> */}
-            {shows.map((show) => (
-                <ShowGontainer key={show.id} show={show} />
-            ))}
+            {shows
+                .sort(
+                    (a, b) => (b.rating.average ?? 0) - (a.rating.average ?? 0)
+                )
+                .slice(0, 15)
+                .map((show) => (
+                    <ShowGontainer key={show.id} show={show} />
+                ))}
         </section>
     );
 }

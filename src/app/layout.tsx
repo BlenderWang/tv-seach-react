@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Providers } from "./providers";
 import Header from "./components/Header";
-import ThemeSwitch from "./components/ThemeSwitch";
 
 export const metadata: Metadata = {
     title: "TV search app",
@@ -17,16 +16,10 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en" suppressHydrationWarning>
-            <body className="">
+            <body>
                 <Providers>
-                    <main className="max-w-6xl mx-auto">
-                        <div className="p-6 w-full flex justify-between items-center gap-4">
-                            <Header />
-
-                            <ThemeSwitch />
-                        </div>
-                        {children}
-                    </main>
+                    <Header />
+                    <main className="max-w-6xl mx-auto">{children}</main>
                 </Providers>
             </body>
         </html>
