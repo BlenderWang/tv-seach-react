@@ -17,6 +17,10 @@ const ShowSchema = z.object({
         name: z.string().optional(),
     }),
     page: z.number().optional(),
+    next_page: z.number().optional(),
+    prev_page: z.number().optional(),
+    total_results: z.number().optional(),
+    per_page: z.number().optional(),
     blurredDataUrl: z.string().optional(),
 });
 
