@@ -7,7 +7,7 @@ type Props = {
 
 export default function ShowContainer({ show }: Props) {
     return (
-        <div className="h-64 bg-purple-200 dark:bg-blue-950 rounded relative overflow-hidden group">
+        <div className="h-96 bg-purple-200 dark:bg-blue-950 rounded relative overflow-hidden group flex flex-col">
             <Image
                 src={show.image?.original ?? ""}
                 alt={show.name}
@@ -20,8 +20,8 @@ export default function ShowContainer({ show }: Props) {
                 className="object-cover group-hover:opacity-75"
                 priority
             />
-            {/* <p>{show.name}</p>
-            <p>{show.rating.average}</p> */}
+            <p>{show.name}</p>
+            <p>{show.rating.average}</p>
         </div>
     );
 }
