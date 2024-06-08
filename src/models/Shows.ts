@@ -17,11 +17,6 @@ const ShowSchema = z.object({
         name: z.string().optional(),
     }),
     page: z.number().optional(),
-    next_page: z.number().optional(),
-    prev_page: z.number().optional(),
-    total_results: z.number().optional(),
-    per_page: z.number().optional(),
-    blurredDataUrl: z.string().optional(),
 });
 
 export const SearchSchema = z
@@ -31,10 +26,10 @@ export const SearchSchema = z
     })
     .array();
 
-export const ShowsSchemaWithLinks = z.array(ShowSchema);
+export const ShowsSchema = z.array(ShowSchema);
 
 export type Show = z.infer<typeof ShowSchema>;
 
-export type ShowsResults = z.infer<typeof ShowsSchemaWithLinks>;
+export type ShowsResults = z.infer<typeof ShowsSchema>;
 
 export type SearchResults = z.infer<typeof SearchSchema>;
