@@ -1,29 +1,27 @@
 import React from "react";
 
 interface SearchbarProps {
-    query: string;
-    onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
-    onSubmit: (event: React.FormEvent<HTMLFormElement>) => void;
+  query: string;
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onSubmit: (event: React.FormEvent<HTMLFormElement>) => void;
 }
 
 const Searchbar = ({ query, onChange, onSubmit }: SearchbarProps) => {
-    return (
-        <div>
-            <form className="form" onSubmit={onSubmit}>
-                <input
-                    type="text"
-                    className="input"
-                    name="query"
-                    value={query}
-                    onChange={onChange}
-                    placeholder="i.e. Dorahodora"
-                />
-                <button className="button" type="submit">
-                    <i className="fas fa-search"></i>
-                </button>
-            </form>
-        </div>
-    );
+  return (
+    <form
+      className="px-2 flex justify-between items-center"
+      onSubmit={onSubmit}
+    >
+      <input
+        type="text"
+        className="rounded-xl p-3"
+        name="query"
+        value={query}
+        onChange={onChange}
+        placeholder="i.e. Dorahodora"
+      />
+    </form>
+  );
 };
 
 export default Searchbar;

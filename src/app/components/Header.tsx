@@ -6,35 +6,31 @@ import Searchbar from "./Searchbar";
 import useFetch from "../hooks/useFetch";
 
 const Header = () => {
-    const [query, setQuery] = useState("");
-    const [items, setItems] = useState([]);
-    const { data, error, loading } = useFetch(
-        `https://api.tvmaze.com/search/shows?q=${query}`
-    );
+  const [query, setQuery] = useState("");
+  const [items, setItems] = useState([]);
+  const { data, error, loading } = useFetch(
+    `https://api.tvmaze.com/search/shows?q=${query}`,
+  );
 
-    const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setQuery(e.target.value);
-    };
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setQuery(e.target.value);
+  };
 
-    const searchedItems = async (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
+  const searchedItems = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
 
-        console.log(data);
-    };
+    console.log(data);
+  };
 
-    return (
-        <div>
-            <a href="/">
-                <SiZincsearch className="text-3xl" />
-            </a>
+  return (
+    <div className="flex items-center gap-2">
+      <a href="/">
+        <SiZincsearch className="text-3xl" />
+      </a>
 
-            <Searchbar
-                query={query}
-                onChange={onChange}
-                onSubmit={searchedItems}
-            />
-        </div>
-    );
+      <Searchbar query={query} onChange={onChange} onSubmit={searchedItems} />
+    </div>
+  );
 };
 
 export default Header;

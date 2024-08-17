@@ -77,4 +77,18 @@
     .text-balance {
         text-wrap: balance;
     }
+
+    .center {
+        @apply flex items-center justify-center;
+    }
+
+    .grid-cols-masonry {
+        display: grid;
+        grid-auto-rows: 10px;
+        @apply grid-cols-gallery gap-2;
+    }
+
+    .grid-item {
+        @apply flex flex-col;
+    }
 }
